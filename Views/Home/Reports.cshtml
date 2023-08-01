@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Reports";
+    
+}
+@model List<String>
+
+<h1>@ViewData["Title"]</h1>
+
+<p>University data reports.</p>
+
+
+     <form>
+			<fieldset>
+				<legend>Отчет</legend>
+        <p>В  @Model[0] c @Model[1] по @Model[2]  средний балл группы @Model[3] равен @Model[4]</p>
+			</fieldset>
+     </form>
+ 
+
+
+
+
+
+
+

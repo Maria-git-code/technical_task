@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Отчёты";
+}
+
+@model WebApplication1.Models.ReportInfo
+
+<h1>@ViewData["Title"]</h1>
+
+<p>Отчёт по успеваемости студентов.</p>
+
+<form method="post" asp-controller="Home" asp-action="Update">
+    <div class="mb-3">
+        <label class="form-label">Введите данные</label>
+        <p>
+            <label class="form-label">Введите номер группы</label>
+			<input type="text" class="form-control" asp-for="group" />
+        </p>
+        <p>
+            <label class="form-label">Введите учебные года</label>
+            <input type="text" class="form-control" asp-for="year" />
+        </p>
+        <p>
+            <label class="form-label">Введите номер первого месяца</label>
+            <input type="text" class="form-control" asp-for="month1" />
+        </p>
+        <p>
+            <label class="form-label">Введите номер второго месяца</label>
+            <input type="text" class="form-control" asp-for="month2" />
+        </p>
+        
+    </div>
+
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Update</button>
+    </div>
+
+    <div>
+        @ViewData["Message"]
+    </div>
+</form>

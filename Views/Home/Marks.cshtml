@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Оценки";
+    string[] MarksTableHeaders = new string[] { "Номер студента", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь", "Январь", "Февраль", "Март", "Апрель", "Май" };
+}
+<h1>@ViewData["Title"]</h1>
+
+<p>Оценки студентов в 2020-2022.</p>
+
+
+
+<div class="table">
+    <table class="table-bordered table-hover">
+        <thread>
+            <tr>
+                @{
+                    foreach (var head in MarksTableHeaders)
+                    {
+                        <th>
+                            @head
+                        </th>
+                    }
+                }
+            </tr>
+        </thread>
+        <tbody>
+            <tr>
+                <td>2020-2021</td>
+            </tr>
+            @{
+                if (Model != null)
+                {
+                    foreach (var Data in Model)
+                    {
+                        if (@Data.year == "20")
+                        {
+                            <tr>
+                                <td>@Data.Id</td>
+                                <td>@Data.Sp</td>
+                                <td>@Data.Oct</td>
+                                <td>@Data.Nv</td>
+                                <td>@Data.Dc</td>
+                                <td>@Data.Jn</td>
+                                <td>@Data.Fbr</td>
+                                <td>@Data.Mrch</td>
+                                <td>@Data.Apr</td>
+                                <td>@Data.May</td>
+                                
+                            </tr>
+                        }
+
+                    }
+
+                }
+            }
+            <tr>
+                <td>2021-2022</td>
+            </tr>
+            @{
+                if (Model != null)
+                {
+                    foreach (var Data in Model)
+                    {
+                        if (@Data.year == "21")
+                        {
+                            <tr>
+                                <td>@Data.Id</td>
+                                <td>@Data.Sp</td>
+                                <td>@Data.Oct</td>
+                                <td>@Data.Nv</td>
+                                <td>@Data.Dc</td>
+                                <td>@Data.Jn</td>
+                                <td>@Data.Fbr</td>
+                                <td>@Data.Mrch</td>
+                                <td>@Data.Apr</td>
+                                <td>@Data.May</td>
+                            </tr>
+                        }
+
+                    }
+
+                }
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
